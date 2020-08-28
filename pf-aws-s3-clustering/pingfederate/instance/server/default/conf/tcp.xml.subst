@@ -29,12 +29,12 @@
     <!-- To enable discovery using a file stored in S3, comment out TCPPING, and uncomment the section below.
          Passwords and keys may be encrypted using PingFederate's obfuscate utility.
          See JGroups documentation on S3_PING for further information on the available settings. -->
-   <S3_PING location="$DISCOVERY_S3_LOCATION"
-             access_key="$DISCOVERY_S3_ACCESS_KEY"
-             secret_access_key="$DISCOVERY_S3_SECRET_KEY"
-             remove_all_data_on_view_change="true"
-             write_data_on_find="true" />
-
+    <org.jgroups.aws.s3.NATIVE_S3_PING
+            region_name="$S3_REGION"
+            bucket_name="$S3_NAME"
+            remove_all_data_on_view_change="true"
+            write_data_on_find="true"/>
+    
     <!-- To enable discovery using DNS records, comment out TCPPING, and uncomment the section below.
          This is the recommended dynamic discovery mechanism when using Kubernetes.
          See JGroups documentation on DNS_PING for further information on the available settings. -->
